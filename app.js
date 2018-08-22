@@ -1,9 +1,3 @@
-function Drink (name, sugar, ice) {
-  this.name = name
-  this.sugar = sugar
-  this.ice = ice
-}
-
 const addDrinkButton = document.querySelector('[data-alpha-pos="add-drink"]')
 addDrinkButton.addEventListener('click', function () {
   console.log('click')
@@ -29,6 +23,12 @@ addDrinkButton.addEventListener('click', function () {
     }
   })
 })
+
+function Drink (name, sugar, ice) {
+  this.name = name
+  this.sugar = sugar
+  this.ice = ice
+}
 
 Drink.prototype.price = function () {
   switch (this.name) {
