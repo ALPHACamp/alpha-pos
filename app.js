@@ -2,10 +2,16 @@ const alphaPos = new AlphaPos()
 
 const addDrinkButton = document.querySelector('[data-alpha-pos="add-drink"]')
 addDrinkButton.addEventListener('click', function () {
+  // 1. get checked value of options
   const drinkName = alphaPos.getCheckedValue('drink')
   const ice = alphaPos.getCheckedValue('ice')
   const sugar = alphaPos.getCheckedValue('sugar')
-  console.log(`${drinkName}, ${ice}, ${sugar}`)
+
+  // 2. show alert if user did not check any drink option
+  if (!drinkName) {
+    alert('Please choose at least one item.')
+    return
+  }
 })
 
 // Constructor function for Alpha Pos System
