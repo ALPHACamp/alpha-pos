@@ -12,6 +12,11 @@ addDrinkButton.addEventListener('click', function () {
     alert('Please choose at least one item.')
     return
   }
+
+  // 3. Use Drink Constructor to create drink instance
+  const drink = new Drink(drinkName, sugar, ice)
+  console.log(drink)
+  console.log(drink.price())
 })
 
 // Constructor function for Alpha Pos System
