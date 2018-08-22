@@ -15,8 +15,9 @@ addDrinkButton.addEventListener('click', function () {
 
   // 3. Use Drink Constructor to create drink instance
   const drink = new Drink(drinkName, sugar, ice)
-  console.log(drink)
-  console.log(drink.price())
+
+  // 4. add order UI
+  alphaPos.addDrink(drink)
 })
 
 // Constructor function for Alpha Pos System
@@ -29,6 +30,27 @@ AlphaPos.prototype.getCheckedValue = function (inputName) {
     }
   })
   return selectedOption
+}
+
+const orderLists = document.querySelector('[data-order-lists]')
+AlphaPos.prototype.addDrink = function (drink) {
+  let orderListsCard = `
+    <div class="card mb-3">
+    <div class="card-body pt-3 pr-3">
+      <div class="text-right">
+        <span data-alpha-pos="delete-drink">×</span>
+      </div>
+      <h6 class="card-title mb-1">${drink.name}</h6>
+      <div class="card-text">${drink.ice}</div>
+      <div class="card-text">${drink.sugar}</div>
+    </div>
+    <div class="card-footer text-right py-2">
+      <div class="card-text text-muted">$ <span data-drink-price>${drink.price()}</span></div>
+    </div>
+  </div>
+  `
+
+  orderLists.insertAdjacentHTML('afterbegin', orderListsCard)
 }
 
 function Drink (name, sugar, ice) {
