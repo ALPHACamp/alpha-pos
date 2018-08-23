@@ -36,9 +36,8 @@ checkoutButton.addEventListener('click', function() {
   alert(`Total amount of drinks：$${alphaPos.checkout()}`)
 
   // 2. reset the order list
+  alphaPos.clearOrder(orderLists)
 })
-
-
 
 // Constructor function for Alpha Pos System
 function AlphaPos () { }
@@ -82,6 +81,12 @@ AlphaPos.prototype.checkout = function () {
     totalAmount += Number(drink.textContent)
   })
   return totalAmount
+}
+
+AlphaPos.prototype.clearOrder = function (target) {
+  target.querySelectorAll('.card').forEach(function(card) {
+    card.remove()
+  })
 }
 
 function Drink (name, sugar, ice) {
