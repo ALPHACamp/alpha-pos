@@ -20,6 +20,11 @@ addDrinkButton.addEventListener('click', function () {
   alphaPos.addDrink(drink)
 })
 
+const orderLists = document.querySelector('[data-order-lists]')
+orderLists.addEventListener('click', function(event) {
+  console.log(event.target)
+})
+
 // Constructor function for Alpha Pos System
 function AlphaPos () { }
 AlphaPos.prototype.getCheckedValue = function (inputName) {
@@ -32,7 +37,6 @@ AlphaPos.prototype.getCheckedValue = function (inputName) {
   return selectedOption
 }
 
-const orderLists = document.querySelector('[data-order-lists]')
 AlphaPos.prototype.addDrink = function (drink) {
   let orderListsCard = `
     <div class="card mb-3">
