@@ -36,7 +36,10 @@ checkoutButton.addEventListener('click', function() {
   alert(`Total amount of drinks：$${alphaPos.checkout()}`)
 
   // 2. reset the order list
-  alphaPos.clearOrder(orderLists)
+  let isOrderConfirm = confirm('Make sure to checkout?')
+  if (isOrderConfirm) {
+    alphaPos.clearOrder(orderLists)
+  }
 })
 
 // Constructor function for Alpha Pos System
