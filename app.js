@@ -108,6 +108,13 @@ Drink.prototype.price = function () {
     case 'Black Tea Latte':
     case 'Matcha Latte':
       return 55
+    case 'Americano':
+      return 60
+    case 'Caffee Latte':
+      return 70
+    case 'Mocha':
+    case 'Macchiato':
+      return 75
     default:
       alert('No this drink')
   }
