@@ -30,7 +30,7 @@ orderLists.addEventListener('click', function (event) {
   alphaPos.deleteDrink(event.target.parentElement.parentElement.parentElement)
 })
 
-const checkoutButton = document.querySelector('[data-alpha-pos="checkout"')
+const checkoutButton = document.querySelector('[data-alpha-pos="checkout"]')
 checkoutButton.addEventListener('click', function() {
   // 1. calculate total amount
   alert(`Total amount of drinks：$${alphaPos.checkout()}`)
